@@ -60,7 +60,7 @@ public class University {
                 ", fullName='" + fullName + '\'' +
                 ", shortName='" + shortName + '\'' +
                 ", yearOfFoundation=" + yearOfFoundation +
-                ", mainProfile=" + mainProfile +
+                ", mainProfile=" + mainProfile.getProfileName() +
                 '}';
     }
     public static class UniversityBuilder {
@@ -73,17 +73,23 @@ public class University {
             this.id = id;
             this.fullName = fullName;
         }
-        public String getShortName() {
-            return shortName;
-        }
-        public int getYearOfFoundation() {
-            return yearOfFoundation;
-        }
-        public StudyProfile getMainProfile() {
-            return mainProfile;
-        }
         public University build() {
             return new University(this);
+        }
+
+        public UniversityBuilder setShortName(String shortName) {
+            this.shortName = shortName;
+            return this;
+        }
+
+        public UniversityBuilder setYearOfFoundation(int yearOfFoundation) {
+            this.yearOfFoundation = yearOfFoundation;
+            return this;
+        }
+
+        public UniversityBuilder setMainProfile(StudyProfile mainProfile) {
+            this.mainProfile = mainProfile;
+            return this;
         }
     }
 }

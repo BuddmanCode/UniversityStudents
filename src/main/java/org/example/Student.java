@@ -62,11 +62,13 @@ public class Student {
             this.fullName = fullName;
             this.universityId = universityId;
         }
-        public int getCurrentCourseNumber() {
-            return currentCourseNumber;
+        public StudentBuilder setCurrentCourseNumber(int currentCourseNumber) {
+            this.currentCourseNumber = currentCourseNumber;
+            return this;
         }
-        public float getAvgExamScore() {
-            return avgExamScore;
+        public StudentBuilder setAvgExamScore(float avgExamScore) {
+            this.avgExamScore = avgExamScore;
+            return this;
         }
         public Student build() {
             return new Student(this);
